@@ -3,7 +3,8 @@ from modelo.producto import Producto
 
 def menu():
     inv = Inventario()
-    
+ #crea un bucle infinito para que el menu se muestre 
+#una y otra vez hasta que elijas "Salir"   
     while True:
         print("\n--- SISTEMA DE INVENTARIO MI TIENDA LPQ ---")
         print("1. Añadir Producto Nuevo")
@@ -11,14 +12,14 @@ def menu():
         print("3. Eliminar Producto")
         print("4. Lista Inventario")
         print("5. Salir")
-        
+     #captura lo que el usuario escribe en el teclado   
         opcion = input("Seleccione una opción: ")
 
         if opcion == "1":
             try:
                 id_p = input("ID: ")
                 nom = input("Nombre: ")
-                stock = int(input("Cantidad: "))
+                cant = int(input("Cantidad: "))
                 prec = float(input("Precio: "))
                 inv.añadir_producto(Producto(id_p, nom, cant, prec))
             except ValueError:
